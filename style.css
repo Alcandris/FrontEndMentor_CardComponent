@@ -1,0 +1,206 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+:root {
+  --BtnColor: hsl(158, 36%, 37%);
+  --BtnActivate: hsl(156, 42%, 18%);
+  --BodyColor: hsl(30, 38%, 92%);
+  --TitleColor: hsl(212, 21%, 14%);
+  --TextColor: hsl(228, 12%, 48%);
+  --BkgText: hsl(0, 0%, 100%);
+}
+
+/* font-family: "Fraunces", serif;
+font-family: "Montserrat", sans-serif; */
+
+body {
+  background-color: var(--BodyColor);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CardContainer {
+  width: 542px;
+  height: 406px;
+  margin: 0 auto;
+  background-color: var(--BkgText);
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+
+.PicturePart {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background-image: url(./images/image-product-desktop.jpg);
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.Infopart {
+  width: 50%;
+  padding: 30px 30px 30px 30px;
+}
+
+.Infopart h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: var(--TextColor);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 6px;
+  margin: 0;
+}
+
+.Infopart h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: var(--TitleColor);
+  font-size: 25px;
+  text-transform: capitalize;
+  margin-right: 30px;
+  line-height: 90%;
+}
+
+.Infopart p {
+  line-height: 160%;
+}
+
+.Infopart p,
+.CostBefore {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: var(--TextColor);
+  font-size: 13px;
+}
+
+.CostContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.CostAfter {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--BtnColor);
+}
+.CostBefore {
+  text-decoration: line-through;
+  margin: 0 auto;
+}
+
+.PurchaseBtn {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
+  background-color: var(--BtnColor);
+  margin-top: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.PurchaseBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--BtnActivate);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.PurchaseBtn:hover:after {
+  opacity: 1;
+}
+
+.PurchaseBtn p {
+  color: var(--BkgText);
+  font-size: 13px;
+  margin-left: 10px;
+  z-index: 2;
+}
+.svg {
+  z-index: 2;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 570px) {
+  .CardContainer {
+    width: 342px;
+    height: 610px;
+    margin: 0 auto;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .PicturePart {
+    width: 100%;
+    height: 240px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    background-position: 0 -130px;
+  }
+
+  .Infopart {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+  }
+
+  .Infopart h2 {
+    font-size: 12px;
+    letter-spacing: 6px;
+  }
+
+  .Infopart h1 {
+    font-size: 30px;
+    margin-right: 25px;
+    line-height: 100%;
+  }
+
+  .Infopart > p,
+  .CostBefore {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .CostContainer {
+    margin-top: 20px;
+  }
+
+  .CostAfter {
+    font-size: 30px;
+  }
+  .CostBefore {
+    text-decoration: line-through;
+    margin: 0 20px;
+  }
+
+  .PurchaseBtn {
+    margin-top: 20px;
+  }
+
+  .PurchaseBtn p {
+    font-size: 15px;
+  }
+}
